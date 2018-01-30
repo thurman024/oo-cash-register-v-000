@@ -2,7 +2,7 @@ require 'pry'
 class CashRegister
   attr_accessor :total, :discount, :items
   #@@items = []
-
+  self.items = []
   def initialize(discount = 0)
     self.total = 0
     self.discount = discount
