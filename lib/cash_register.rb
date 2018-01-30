@@ -15,16 +15,16 @@ class CashRegister
     else
       self.items << item
     end
-    @total += price*qty
+    self.total += price*qty
   end
 
   def apply_discount
-    if @discount == 0
+    if self.discount == 0
       "There is no discount to apply."
     else
-      @total = (1-@discount.to_f/100)*@total
+      self.total = (1-self.discount.to_f/100)*self.total
       #binding.pry
-      "After the discount, the total comes to $#{@total.to_i}."
+      "After the discount, the total comes to $#{self.total.to_i}."
     end
   end
 
