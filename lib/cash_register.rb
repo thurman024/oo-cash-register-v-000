@@ -11,11 +11,11 @@ class CashRegister
   def add_item(item, price, qty = 1)
     if qty > 1
       multiples = Array.new(qty, item)
-      mutliples.each {|i| @@items << i}
+      multiples.each {|i| @@items << i}
     else
       @@items << item
     end
-    @total += price*qty  
+    @total += price*qty
   end
 
   def apply_discount
