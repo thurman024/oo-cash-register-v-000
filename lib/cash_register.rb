@@ -14,8 +14,8 @@ class CashRegister
       mutliples.each {|i| @@items << i}
     else
       @@items << item
-      @total += price*qty
     end
+    @total += price*qty  
   end
 
   def apply_discount
