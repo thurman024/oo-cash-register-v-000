@@ -35,5 +35,7 @@ class CashRegister
   end
 
   def self.void_last_transaction
-    self.items.shift()
+    self.items.delete(self.last_transaction[0])
+    self.total -= self.last_transaction[1]
+  end
 end
