@@ -1,19 +1,19 @@
 require 'pry'
 class CashRegister
-  attr_accessor :total, :discount
-  @@items = []
+  attr_accessor :total, :discount, :items
+  #@@items = []
 
   def initialize(discount = 0)
-    @total = 0
-    @discount = discount
+    self.total = 0
+    self.discount = discount
   end
 
   def add_item(item, price, qty = 1)
     if qty > 1
       multiples = Array.new(qty, item)
-      multiples.each {|i| @@items << i}
+      multiples.each {|i| self.items << i}
     else
-      @@items << item
+      self.items << item
     end
     @total += price*qty
   end
@@ -29,7 +29,7 @@ class CashRegister
   end
 
   def self.items
-    @@items
+    self.items
   end
 
 end
