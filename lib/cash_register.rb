@@ -9,8 +9,12 @@ class CashRegister
   end
 
   def add_item(item, price, qty = 1)
-    @@items << item
-    @total += price*qty
+    if qty > 1
+      multiples = Array.new(qty, item)
+      mutliples.each {|i| @@items << i}
+    else
+      @@items << item
+      @total += price*qty
   end
 
   def apply_discount
