@@ -30,7 +30,7 @@ class CashRegister
     end
   end
 
-  def items
+  def self.items
     self.items
   end
 
