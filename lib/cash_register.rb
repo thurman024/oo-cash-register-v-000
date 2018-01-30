@@ -1,6 +1,6 @@
 require 'pry'
 class CashRegister
-  attr_accessor :total, :discount, :items
+  attr_accessor :total, :discount, :items, :last_transaction
   #@@items = []
 
   def initialize(discount = 0)
@@ -16,6 +16,7 @@ class CashRegister
     else
       self.items << item
     end
+    self.last_transaction = [item, price, qty]
     self.total += price*qty
   end
 
@@ -33,4 +34,6 @@ class CashRegister
     self.items
   end
 
+  def self.void_last_transaction
+    self.items.shift()
 end
